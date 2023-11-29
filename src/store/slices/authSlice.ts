@@ -8,6 +8,7 @@ type AuthState = {
   result: string | null;
   isLoading: boolean;
   token: number;
+  isBlured: boolean;
 };
 
 const slice = createSlice({
@@ -17,7 +18,8 @@ const slice = createSlice({
     selectedFile: null,
     result: null,
     isLoading: false,
-    token: 0
+    token: 0,
+    isBlured: true
   } as AuthState,
   reducers: {
     setSelectedFile: (state, action) => {
@@ -27,6 +29,9 @@ const slice = createSlice({
       state.result = action.payload;
     },
     setIsLoading: (state, action) => {
+      state.isLoading = action.payload;
+    },
+    setIsBlured: (state, action) => {
       state.isLoading = action.payload;
     },
     setCurrentUser: (state, action) => {
@@ -45,10 +50,12 @@ export const selectResult = (state: RootState): string | null =>
   state.authSlice.result;
 export const selectLoading = (state: RootState): boolean =>
   state.authSlice.isLoading;
+export const selectBlured = (state: RootState): boolean =>
+  state.authSlice.isLoading;
 export const selectCurrentUser = (state: RootState): string | null =>
   state.authSlice.currentUser;
 export const selectToken = (state: RootState): number =>
   state.authSlice.token;
-export const { setSelectedFile, setResult, setIsLoading, setCurrentUser, setToken } = slice.actions;
+export const { setSelectedFile, setResult, setIsLoading, setCurrentUser, setToken, setIsBlured } = slice.actions;
 
 export default slice.reducer;

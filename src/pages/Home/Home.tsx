@@ -3,7 +3,7 @@ import { advantagesItem } from '../../constants/advantagesItem';
 import axios from 'axios';
 import { Slider, Loading, Advantages, InputButton, GenerateButton } from '../../components';
 import { useAppSelector, useAppDispatch } from '../../store/storeHooks';
-import { selectFile, selectResult, selectLoading, setResult, setSelectedFile, setIsLoading, selectCurrentUser, setToken, selectToken } from '../../store/slices/authSlice';
+import { selectFile, selectResult, selectLoading, setResult, selectBlured, setIsBlured, setSelectedFile, setIsLoading, selectCurrentUser, setToken, selectToken } from '../../store/slices/authSlice';
 import s from './Home.module.scss'
 import { useNavigate } from 'react-router-dom';
 
@@ -16,7 +16,7 @@ const Home = () => {
   const token = useAppSelector(selectToken);
   const result = useAppSelector(selectResult);
   const isLoading = useAppSelector(selectLoading);
-  const [isBlur, setIsBlur] = useState(true);
+  const isBlur = useAppSelector(selectBlured);
   const navigate = useNavigate();
 
   const unBlur = () => {
@@ -24,7 +24,7 @@ const Home = () => {
     if (token < 6) {
       navigate('/price')
     } else {
-      setIsBlur(false);
+      dispatch(setIsBlured(false));
       const url = 'https://sexgirl.kz/api/minus';
       const data = {
         userID: currentUser,
@@ -56,6 +56,7 @@ const Home = () => {
     dispatch(setIsLoading(true));
     dispatch(setSelectedFile(null));
     dispatch(setResult(null));
+    dispatch(setIsBlured(true));
     const url = 'https://sexgirl.kz/api/generateImage';
     const data = {
       "mask": selectedFile
