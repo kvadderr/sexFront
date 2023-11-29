@@ -51,7 +51,7 @@ export const selectResult = (state: RootState): string | null =>
 export const selectLoading = (state: RootState): boolean =>
   state.authSlice.isLoading;
 export const selectBlured = (state: RootState): boolean =>
-  state.authSlice.isLoading;
+  state.authSlice.isBlured;
 export const selectCurrentUser = (state: RootState): string | null =>
   state.authSlice.currentUser;
 export const selectToken = (state: RootState): number =>
