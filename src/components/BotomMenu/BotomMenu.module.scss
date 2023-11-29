@@ -1,0 +1,66 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.containerMenu {
+  padding-inline: 40px;
+  position: fixed;
+  display: flex;
+  bottom: 0;
+  gap: 40px;
+  z-index: 2;
+  background-color: $color-gray;
+  border-top-left-radius: $custom-radius;
+  border-top-right-radius: $custom-radius;
+
+  @include for-phone {
+    padding-inline: 0px;
+    left: 0;
+    gap: 0;
+    width: 100vw;
+  }
+
+}
+
+.menuItemContainer {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: $color-white;
+  padding-block: 30px;
+
+  &:hover {
+    color: $color-primary;
+
+    p {
+      color: $color-primary;
+      ;
+    }
+  }
+
+  &[data-active] {
+    color: $color-primary;
+
+    p {
+      color: $color-primary;
+      ;
+    }
+  }
+
+  @include for-phone {
+    gap: 0;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      display: none;
+    }
+
+  }
+
+
+}
+

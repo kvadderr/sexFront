@@ -1,0 +1,15 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.containerAdvantages {
+  display: flex;
+  flex: 0 0 calc(50% - 20px);
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  color: $color-white;
+
+  @include for-laptop {
+    gap: 10px;
+  }
+}

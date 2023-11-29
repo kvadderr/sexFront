@@ -1,0 +1,48 @@
+@import '../../styles/mixins.scss';
+@import '../../styles/variables.scss';
+
+.containerInput {
+  background-color: $color-gray;
+  border-radius: 12px;
+  padding-block: 8px;
+  padding-inline: 36px;
+  display: flex;
+  flex-direction: 'row';
+  gap: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color;
+  }
+
+  @include for-phone {
+    &:hover {
+      background-color: $color-gray;
+    }
+  }
+}
+
+.greencontainer {
+  background-color: $color-primary;
+  border-radius: 12px;
+  padding-block: 8px;
+  padding-inline: 36px;
+  border: 0;
+  color: $color-white;
+  display: flex;
+  align-items: center;
+  flex-direction: 'row';
+  gap: 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $background-color;
+  }
+
+  @include for-phone {
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+
+}
