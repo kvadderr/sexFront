@@ -32,7 +32,7 @@ const slice = createSlice({
       state.isLoading = action.payload;
     },
     setIsBlured: (state, action) => {
-      state.isLoading = action.payload;
+      state.isBlured = action.payload;
     },
     setCurrentUser: (state, action) => {
       localStorage.setItem('currentUser', action.payload);
