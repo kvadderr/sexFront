@@ -17,7 +17,7 @@ const Price = () => {
   const dispatch = useAppDispatch();
 
   const onClick = () => {
-    const url = 'http://localhost:3000/me/' + id;
+    const url = 'https://sexgirl.kz/api/me/' + id;
     currentUser && axios.get(url)
       .then(response => {
         dispatch(setToken(response?.data.token));
@@ -30,7 +30,7 @@ const Price = () => {
 
   const payment = (tariff: Tariff) => {
     setIsLoading(true);
-    const url = 'http://localhost:3000/payment/';
+    const url = 'https://sexgirl.kz/api/payment/';
     const data = {
       amount: tariff.RUB,
       userID: currentUser,

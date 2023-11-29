@@ -24,7 +24,7 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const url = 'http://localhost:3000/me/'+currentUser;
+    const url = 'https://sexgirl.kz/api/me/'+currentUser;
     currentUser && axios.get(url)
       .then(response => {
         dispatch(setToken(response?.data.token));

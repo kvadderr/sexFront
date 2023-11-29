@@ -25,7 +25,7 @@ const Home = () => {
       navigate('/price')
     } else {
       setIsBlur(false);
-      const url = 'http://localhost:3000/minus';
+      const url = 'https://sexgirl.kz/api/minus';
       const data = {
         userID: currentUser,
         token: 6
@@ -56,7 +56,7 @@ const Home = () => {
     dispatch(setIsLoading(true));
     dispatch(setSelectedFile(null));
     dispatch(setResult(null));
-    const url = 'http://localhost:3000/generateImage';
+    const url = 'https://sexgirl.kz/api/generateImage';
     const data = {
       "mask": selectedFile
     };
