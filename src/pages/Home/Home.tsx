@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { advantagesItem } from '../../constants/advantagesItem';
 import axios from 'axios';
 import { Slider, Loading, Advantages, InputButton, GenerateButton } from '../../components';
