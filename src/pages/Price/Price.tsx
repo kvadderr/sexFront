@@ -39,7 +39,7 @@ const Price = () => {
     axios.post(url, data)
       .then(response => {
         setIsLoading(false);
-        window.open(response?.data, '_blank');
+        window.open(response?.data);
       })
       .catch(error => {
         setIsLoading(false);
